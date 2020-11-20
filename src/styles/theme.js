@@ -18,7 +18,13 @@ const theme = createMuiTheme({
     },
     typography: {
         fontSize: 14,
-    }
+        fontFamily: [
+            "Sawarabi Mincho",
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+        ].join(','),
+    },
 });
 
 export default theme;

@@ -13,4 +13,9 @@ a {
 
 * {
   box-sizing: border-box;
+  /* font-family: "M PLUS Rounded 1c Kokoro Hannari"; */
+}
+
+li {
+  list-style: none;
 }
