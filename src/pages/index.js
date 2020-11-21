@@ -11,7 +11,7 @@ import differenceInMinutes from 'date-fns/differenceInMinutes'
 import Card from '@material-ui/core/Card';
 import { CardContent,Typography } from '@material-ui/core';
 
-import time_table_21 from '../time_tabel_21.json'
+import time_table_21 from '../time_table_21.json'
 import time_table_22 from '../time_table_22.json'
 
 const useStyles = makeStyles({
@@ -81,6 +81,7 @@ const Home = () => {
                         new Date(2020, 11, array.day, array.time_start_h, array.time_start_m),//データをいれる,それまでの分が出る
                         new Date(2020, 11, format(new Date(),'d'), format(new Date(),'H'), format(new Date(),'m'))
                     )
+                    if ( array.add == undefined ) { array.add = '' }
                     let str = array.name +'+'+ array.add +'/'+ time_distance + '分後スタート' + '&' + array.time_start_h + ':' + array.time_start_m + '～'
                     if ( time_distance <= 0 ) {
                         str = array.name +'+'+ array.add +'/'+ time_distance + '分前から' + '&' + array.time_start_h + ':' + array.time_start_m + '～'
@@ -289,14 +290,15 @@ const Home = () => {
                                                         システムのエラー中です。
                                                     </CardContent>
                                                 </Card>
-                                                <div className={`styles.box ${classes.box}`}>
+                                                {/* <div className={`styles.box ${classes.box}`}>
                                                     <div className={styles.liquid}>
                                                         <div className={styles.a}></div>
                                                         <div className={styles.b}></div>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         )
+                                        // title_1_y = `現在イベント中ではないか、システムのエラー中です。`
                                     }
 
                                     return (
